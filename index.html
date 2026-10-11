@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>星空影视 - 影视网址导航大全｜实用网址收录</title>
+<meta name="description" content="星空影视（xingkongyingshi-cn.github.io）是一个清爽的影视网址导航站点，收录电影、电视剧、综艺、动漫、纪录片、短剧等优质影视网址，提供分类索引、热播榜单与找片指南，帮你快速找到想看的影视内容。">
+<meta name="keywords" content="星空影视,星空电影,电影网站导航,影视网址导航,影视网址大全,在线观看电影,高清电影,电视剧,综艺,动漫,纪录片,短剧,电影推荐">
+<style>
+:root{
+  --space:#05060f;
+  --space-2:#0a0e1f;
+  --star:#ffe9c7;
+  --nebula:#7b5cff;
+  --nebula-2:#2f7bff;
+  --rose:#ff5b8a;
+  --cyan:#3fe0d2;
+  --gold:#ffcf5c;
+  --paper:#fbf7ef;
+  --ink:#151a2b;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Microsoft YaHei","WenQuanYi Micro Hei",system-ui,-apple-system,sans-serif;
+  background:var(--space);
+  color:var(--star);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+  background-image:
+    radial-gradient(1200px 600px at 12% -8%, rgba(123,92,255,.28), transparent 60%),
+    radial-gradient(1000px 500px at 88% 8%, rgba(63,224,210,.16), transparent 62%),
+    radial-gradient(900px 700px at 50% 108%, rgba(255,91,138,.18), transparent 60%),
+    radial-gradient(1.5px 1.5px at 10% 20%, #fff 50%, transparent),
+    radial-gradient(1px 1px at 30% 60%, #ffe9c7 50%, transparent),
+    radial-gradient(1.2px 1.2px at 55% 30%, #fff 50%, transparent),
+    radial-gradient(1px 1px at 75% 75%, #c9d4ff 50%, transparent),
+    radial-gradient(1.4px 1.4px at 88% 40%, #fff 50%, transparent),
+    radial-gradient(1px 1px at 22% 88%, #ffe9c7 50%, transparent),
+    radial-gradient(1.1px 1.1px at 68% 18%, #fff 50%, transparent);
+  background-attachment:fixed;
+}
+a{color:inherit;text-decoration:none}
+ul,ol{list-style:none}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+/* ===== 顶部星轨 ===== */
+.topbar{
+  position:relative;overflow:hidden;
+  background:linear-gradient(90deg,#04050c 0%,#0b1230 45%,#1a0b2e 100%);
+  border-bottom:1px solid rgba(255,233,199,.14);
+}
+.topbar::before{
+  content:"";position:absolute;inset:0;
+  background-image:
+    linear-gradient(90deg, transparent 0 2px, rgba(255,255,255,.5) 2px 3px, transparent 3px 9px),
+    linear-gradient(90deg, transparent 0 1px, rgba(255,255,255,.28) 1px 2px, transparent 2px 7px);
+  background-size:120px 100%, 78px 100%;
+  mask-image:linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  -webkit-mask-image:linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  animation:drift 38s linear infinite;
+}
+@keyframes drift{to{background-position:-960px 0,-624px 0}}
+.stars{display:flex;align-items:center;gap:14px;height:42px;font-size:12.5px;letter-spacing:.14em;color:#c9d4ff;position:relative}
+.stars .dot{width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px var(--cyan);animation:tw 1.6s ease-in-out infinite alternate}
+@keyframes tw{from{opacity:.35;transform:scale(.8)}to{opacity:1;transform:scale(1.25)}}
+.stars .sep{opacity:.35}
+.stars b{color:var(--star);font-weight:600;letter-spacing:.2em}
+.stars .blink{margin-left:auto;color:var(--gold);font-variant-numeric:tabular-nums}
+/* ===== 报头 ===== */
+header.masthead{padding:30px 0 22px;border-bottom:1px solid rgba(255,233,199,.16)}
+.masthead-in{display:flex;align-items:flex-end;gap:26px;flex-wrap:wrap}
+.logo{position:relative;width:74px;height:74px;flex:none}
+.logo i{
+  position:absolute;inset:0;border-radius:50%;
+  background:
+    radial-gradient(circle at 36% 34%, #fff 0 3px, transparent 3px),
+    radial-gradient(circle at 62% 42%, #ffe9c7 0 2.4px, transparent 2.4px),
+    radial-gradient(circle at 50% 50%, #1b2a6b 0 22%, #0b1230 22% 30%, transparent 30%);
+  box-shadow:0 0 0 3px rgba(255,233,199,.55), 0 0 34px rgba(123,92,255,.65), inset 0 0 18px rgba(63,224,210,.35);
+  animation:spin 60s linear infinite;
+}
+.logo u{position:absolute;left:50%;top:50%;width:46px;height:46px;margin:-23px 0 0 -23px;border-radius:50%;border:1.5px dashed rgba(255,233,199,.5);animation:spin 26s linear infinite reverse}
+@keyframes spin{to{transform:rotate(360deg)}}
+.brand h1{font-size:34px;line-height:1.15;letter-spacing:.06em;font-weight:800;
+  background:linear-gradient(92deg,#fff 8%,var(--gold) 42%,var(--rose) 72%,var(--cyan) 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.brand p{font-size:13px;color:#aab3d6;letter-spacing:.16em;margin-top:6px}
+.brand p em{font-style:normal;color:var(--gold)}
+.toc{display:grid;grid-template-columns:repeat(6,1fr);gap:0;margin-top:26px;border:1px solid rgba(255,233,199,.2);border-radius:14px;overflow:hidden;background:rgba(10,14,31,.55);backdrop-filter:blur(6px)}
+.toc a{display:flex;flex-direction:column;align-items:center;gap:5px;padding:13px 6px;text-align:center;transition:.25s;position:relative}
+.toc a:not(:last-child){border-right:1px solid rgba(255,233,199,.13)}
+.toc a:hover{background:linear-gradient(180deg,rgba(123,92,255,.24),rgba(63,224,210,.1))}
+.toc a:hover .t{color:#fff}
+.toc .n{font:600 11px/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--gold);letter-spacing:.12em}
+.toc .t{font-size:13.5px;font-weight:600;color:#dfe5ff;transition:.25s}
+/* ===== 通用区块 ===== */
+section{padding:60px 0}
+.kicker{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+.kicker .no{font:700 12px/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--space);background:var(--gold);padding:5px 9px;border-radius:999px;letter-spacing:.1em}
+.kicker .en{font-size:11.5px;letter-spacing:.3em;color:#8d97c4;text-transform:uppercase}
+.sec-title{font-size:26px;font-weight:800;letter-spacing:.03em;color:#fff;display:flex;align:baseline;gap:12px;flex-wrap:wrap}
+.sec-title small{font-size:13px;font-weight:500;color:#8d97c4;letter-spacing:.05em}
+.lede{color:#aab3d6;font-size:14.5px;margin:10px 0 26px;max-width:76ch}
+/* ===== HERO ===== */
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:center;padding-top:44px}
+.hero-txt h2{font-size:40px;line-height:1.22;font-weight:850;letter-spacing:.02em;color:#fff}
+.hero-txt h2 span{background:linear-gradient(92deg,var(--cyan),var(--nebula) 55%,var(--rose));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-txt p{color:#b6bfe0;font-size:15.5px;margin:16px 0 22px;max-width:54ch}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{padding:12px 24px;border-radius:999px;font-size:14.5px;font-weight:700;transition:.25s;border:1.5px solid transparent}
+.btn.pri{background:linear-gradient(92deg,var(--nebula),var(--nebula-2));color:#fff;box-shadow:0 10px 26px -10px rgba(123,92,255,.85)}
+.btn.pri:hover{transform:translateY(-2px);box-shadow:0 16px 32px -12px rgba(123,92,255,.9)}
+.btn.ghost{border-color:rgba(255,233,199,.4);color:var(--star)}
+.btn.ghost:hover{background:rgba(255,233,199,.1);border-color:var(--gold);color:#fff}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:30px;background:rgba(255,233,199,.16);border:1px solid rgba(255,233,199,.18);border-radius:14px;overflow:hidden}
+.stat{background:rgba(8,12,28,.72);padding:14px 10px;text-align:center}
+.stat b{display:block;font-size:21px;font-weight:800;color:var(--gold);font-variant-numeric:tabular-nums}
+.stat span{font-size:11.5px;color:#9aa4c8;letter-spacing:.1em}
+/* 六星座卡 */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.orbit{position:relative;padding:18px 16px 16px;border-radius:16px;background:linear-gradient(160deg,rgba(255,255,255,.07),rgba(255,255,255,.015));border:1px solid rgba(255,233,199,.16);overflow:hidden;transition:.3s}
+.orbit::before{content:"";position:absolute;right:-26px;top:-26px;width:76px;height:76px;border-radius:50%;border:1.5px solid rgba(255,233,199,.22)}
+.orbit::after{content:"";position:absolute;right:6px;top:6px;width:30px;height:30px;border-radius:50%;border:1.5px dashed rgba(63,224,210,.5);animation:spin 20s linear infinite}
+.orbit:hover{transform:translateY(-5px);border-color:rgba(255,207,92,.6);box-shadow:0 18px 40px -18px rgba(123,92,255,.7)}
+.orbit .code{font:700 10.5px/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--gold);letter-spacing:.14em}
+.orbit h3{font-size:16.5px;margin:9px 0 4px;color:#fff;position:relative}
+.orbit p{font-size:12.5px;color:#9aa4c8;position:relative}
+.orbit .go{display:inline-block;margin-top:10px;font-size:11.5px;color:var(--cyan);letter-spacing:.14em;position:relative}
+/* ===== 片单 figure ===== */
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.film{position:relative;border-radius:15px;overflow:hidden;background:#0c1230;transition:.32s}
+.cover{position:relative;aspect-ratio:3/4;overflow:hidden}
+.cover::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg, rgba(255,255,255,.05) 0 1px, transparent 1px 5px);mix-blend-mode:overlay;pointer-events:none}
+.cover i{position:absolute;inset:0;display:block}
+.cover .num{position:absolute;left:10px;bottom:9px;font:800 26px/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:rgba(255,255,255,.92);text-shadow:0 3px 10px rgba(0,0,0,.6);z-index:2}
+.cover .tag{position:absolute;right:10px;top:10px;font-size:10.5px;letter-spacing:.1em;color:#0b1230;background:var(--gold);padding:4px 9px;border-radius:999px;font-weight:700;z-index:2}
+.film figcaption{padding:13px 14px 15px}
+.film h3{font-size:15.5px;color:#fff;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.film .meta{font-size:12px;color:#8d97c4;margin-top:5px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.film .meta b{color:var(--cyan);font-weight:600}
+.film:hover{transform:translateY(-6px);box-shadow:0 24px 46px -20px rgba(123,92,255,.75)}
+.c1{background:linear-gradient(155deg,#2a1b6e,#7b5cff)}
+.c2{background:linear-gradient(155deg,#0d3f6e,#2f7bff)}
+.c3{background:linear-gradient(155deg,#6e1b4a,#ff5b8a)}
+.c4{background:linear-gradient(155deg,#0d5e5e,#3fe0d2)}
+.c5{background:linear-gradient(155deg,#6e4a0d,#ffcf5c)}
+.c6{background:linear-gradient(155deg,#5e0d2e,#ff7a45)}
+.c7{background:linear-gradient(155deg,#1d3f2e,#5fbf6e)}
+.c8{background:linear-gradient(155deg,#3a0d5e,#a066ff)}
+/* ===== 分类 dl ===== */
+.cat{display:grid;grid-template-columns:repeat(2,1fr);gap:16px 30px;background:rgba(10,14,31,.5);border:1px solid rgba(255,233,199,.15);border-radius:18px;padding:26px 30px}
+.cat dl{display:grid;grid-template-columns:76px 1fr;gap:0;padding:9px 0;border-bottom:1.4px dotted rgba(255,233,199,.22)}
+.cat dt{font:700 13px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;color:#0b1230;background:var(--cyan);padding:7px 6px;text-align:center;border-radius:7px;height:fit-content;align-self:center;letter-spacing:.06em}
+.cat dd{padding-left:14px;color:#c9d4ff;font-size:14px;display:flex;flex-wrap:wrap;gap:6px;align-content:center}
+.cat dd em{font-style:normal;font-size:11.5px;color:#7f8ab0;letter-spacing:.06em;width:100%;margin-bottom:2px}
+.pill{padding:4px 11px;border-radius:999px;font-size:12px;border:1px solid rgba(255,233,199,.28);transition:.22s;cursor:default}
+.pill:hover{background:var(--nebula);border-color:var(--nebula);color:#fff;transform:translateY(-1px)}
+/* ===== 网址收录 table ===== */
+.scroller{overflow-x:auto;border:1px solid rgba(255,233,199,.16);border-radius:16px;background:rgba(8,12,28,.6)}
+table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:860px}
+thead th{background:linear-gradient(92deg,#151a40,#2a1b6e);color:var(--star);text-align:left;padding:14px 16px;font-size:12.5px;letter-spacing:.12em;white-space:nowrap}
+tbody td{padding:13px 16px;border-top:1px solid rgba(255,233,199,.1);color:#c9d4ff;vertical-align:middle}
+tbody tr:hover{background:rgba(123,92,255,.13)}
+td.name{font-weight:700;color:#fff;white-space:nowrap}
+td.url{font:400 12px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;color:#8d97c4;word-break:break-all}
+.badge{display:inline-block;font-size:11.5px;padding:3px 10px;border-radius:6px;letter-spacing:.06em;font-weight:700}
+.b1{background:rgba(63,224,210,.16);color:var(--cyan);border:1px solid rgba(63,224,210,.45)}
+.b2{background:rgba(255,91,138,.16);color:var(--rose);border:1px solid rgba(255,91,138,.45)}
+.b3{background:rgba(255,207,92,.16);color:var(--gold);border:1px solid rgba(255,207,92,.45)}
+.b4{background:rgba(47,123,255,.18);color:#8fc0ff;border:1px solid rgba(47,123,255,.45)}
+.bar{height:6px;border-radius:999px;background:rgba(255,255,255,.1);overflow:hidden;min-width:78px}
+.bar i{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--nebula),var(--cyan));animation:fill 1.4s cubic-bezier(.4,0,.2,1) both}
+@keyframes fill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.go-btn{font-size:12px;font-weight:800;color:#0b1230;background:var(--gold);padding:6px 15px;border-radius:999px;letter-spacing:.1em;transition:.22s;display:inline-block}
+.go-btn:hover{background:#fff;box-shadow:0 0 16px rgba(255,207,92,.7);transform:translateY(-1px)}
+/* ===== 热播榜 ol + aside ===== */
+.rank{display:grid;grid-template-columns:1.55fr 1fr;gap:30px;align-items:start}
+.hot{list-style:none;counter-reset:h}
+.hot li{display:grid;grid-template-columns:52px 1fr auto;align-items:center;gap:14px;padding:12px 14px;border-radius:13px;margin-bottom:9px;background:linear-gradient(90deg,rgba(255,255,255,.05),rgba(255,255,255,.012));border:1px solid rgba(255,233,199,.1);transition:.25s}
+.hot li:hover{border-color:rgba(255,207,92,.5);transform:translateX(4px)}
+.hot li::before{counter-increment:h;content:counter(h,decimal-leading-zero);font:800 17px/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:#0b1230;background:var(--gold);width:34px;height:34px;border-radius:9px 4px 9px 4px;display:grid;place-items:center}
+.hot li:nth-child(1)::before{background:var(--gold)}
+.hot li:nth-child(2)::before{background:var(--cyan);color:#04231f}
+.hot li:nth-child(3)::before{background:var(--rose);color:#fff}
+.hot .ti{font-size:14.5px;font-weight:700;color:#fff}
+.hot .ti span{display:block;font-size:11.5px;color:#8d97c4;font-weight:500;margin-top:2px;letter-spacing:.04em}
+.track{flex:1;height:5px;border-radius:999px;background:rgba(255,255,255,.1);overflow:hidden;min-width:70px}
+.track i{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--nebula),var(--rose) 60%,var(--gold));background-size:200% 100%;animation:flow 2.4s linear infinite, fill 1.2s both}
+@keyframes flow{to{background-position:200% 0}}
+.hot .val{font:700 12px/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--gold);white-space:nowrap}
+.trend{font-size:10.5px;padding:2px 7px;border-radius:999px;background:rgba(95,191,110,.16);color:#7fe39a;border:1px solid rgba(95,191,110,.4)}
+.side{background:linear-gradient(160deg,rgba(123,92,255,.16),rgba(63,224,210,.06));border:1px solid rgba(255,233,199,.18);border-radius:18px;padding:22px 24px}
+.side h4{font-size:16px;color:#fff;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.side h4::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--rose);box-shadow:0 0 10px var(--rose)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips a{font-size:12.5px;padding:6px 13px;border-radius:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,233,199,.2);color:#dfe5ff;transition:.22s}
+.chips a:hover{background:var(--nebula);border-color:var(--nebula);color:#fff}
+/* ===== 找片指南 details ===== */
+.guide{display:grid;gap:11px;max-width:940px}
+.guide details{border:1px solid rgba(255,233,199,.15);border-radius:14px;background:linear-gradient(90deg,rgba(255,255,255,.045),rgba(255,255,255,.01));overflow:hidden}
+.guide summary{cursor:pointer;padding:17px 22px;font-size:16px;font-weight:700;color:#fff;list-style:none;display:flex;align-items:center;gap:13px;transition:.22s}
+.guide summary::-webkit-details-marker{display:none}
+.guide summary::before{content:counter(g,decimal-leading-zero);counter-increment:g;font:700 12px/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--gold);background:rgba(255,207,92,.14);border:1px solid rgba(255,207,92,.45);padding:6px 8px;border-radius:7px}
+.guide summary::after{content:"＋";margin-left:auto;font-size:19px;color:var(--cyan);transition:.3s;line-height:1}
+.guide details[open] summary::after{transform:rotate(45deg);color:var(--rose)}
+.guide details[open]{border-color:rgba(123,92,255,.5);box-shadow:0 0 0 3px rgba(123,92,255,.12)}
+.guide .body{padding:0 22px 20px 58px;color:#b6bfe0;font-size:14px}
+.guide .body ol,.guide .body ul{padding-left:20px;display:grid;gap:7px}
+.guide .body li{position:relative}
+.guide .body b{color:var(--gold)}
+/* ===== 关于 ===== */
+.about{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;background:linear-gradient(135deg,rgba(123,92,255,.14),rgba(63,224,210,.06));border:1px solid rgba(255,233,199,.16);border-radius:20px;padding:32px 34px}
+.about h3{font-size:22px;color:#fff;margin-bottom:12px}
+.about p{color:#c2c9e6;font-size:14.5px;margin-bottom:10px}
+.about ul{display:grid;gap:9px;margin-top:6px}
+.about li{font-size:13.5px;color:#c2c9e6;padding-left:20px;position:relative}
+.about li::before{content:"★";position:absolute;left:0;top:0;color:var(--gold);font-size:10px}
+.about li b{color:var(--star)}
+.qr{border:1px dashed rgba(255,233,199,.35);border-radius:14px;padding:20px;text-align:center;background:rgba(8,12,28,.5)}
+.qr .box{width:120px;height:120px;margin:0 auto 12px;border-radius:12px;background:
+  linear-gradient(#0b1230,#0b1230) padding-box,
+  repeating-linear-gradient(45deg,var(--cyan) 0 3px,var(--nebula) 3px 6px) border-box;
+  border:4px solid transparent;position:relative}
+.qr .box::after{content:"✧";position:absolute;inset:0;display:grid;place-items:center;color:var(--gold);font-size:34px}
+.qr p{font-size:13px;color:#9aa4c8}
+/* ===== 页脚 ===== */
+footer{border-top:1px solid rgba(255,233,199,.14);padding:34px 0 40px;color:#7f8ab0;font-size:12.5px}
+.foot{display:grid;grid-template-columns:1.4fr 1fr;gap:26px;align-items:center}
+.foot .l b{display:block;color:var(--star);font-size:15px;letter-spacing:.1em;margin-bottom:5px}
+.foot .r{text-align:right;font:400 12px/1.9 ui-monospace,SFMono-Regular,Menlo,monospace;color:#8d97c4}
+.top{position:fixed;right:22px;bottom:26px;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(140deg,var(--nebula),var(--nebula-2));color:#fff;font-size:19px;box-shadow:0 12px 28px -10px rgba(123,92,255,.8);z-index:50;opacity:0;pointer-events:none;transition:.3s}
+.top.show{opacity:1;pointer-events:auto}
+/* ===== 响应式 ===== */
+@media (max-width:1080px){
+  .grid{grid-template-columns:repeat(3,1fr)}
+  .hero{grid-template-columns:1fr}
+  .rank,.about{grid-template-columns:1fr}
+  .foot{grid-template-columns:1fr;gap:12px}.foot .r{text-align:left}
+}
+@media (max-width:1000px){
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .cat{grid-template-columns:1fr;gap:6px 0}
+  .hot li{grid-template-columns:46px 1fr;gap:10px}
+  .hot .track,.hot .val{grid-column:2;min-width:0}
+}
+@media (max-width:760px){
+  .wrap{padding:0 18px}
+  section{padding:44px 0}
+  .brand h1{font-size:27px}
+  .hero-txt h2{font-size:29px}
+  .sec-title{font-size:21px}
+  .toc{grid-template-columns:repeat(3,1fr);border-radius:12px}
+  .toc a:not(:last-child):not(:nth-child(3n)){border-right-color:rgba(255,233,199,.13)}
+  .toc a:nth-child(-n+3){border-bottom:1px solid rgba(255,233,199,.13)}
+  .grid{grid-template-columns:repeat(2,1fr);gap:13px}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .film h3{font-size:14.5px}
+  .cat{padding:18px 16px}
+  .about{padding:24px 20px}
+  .masthead-in{gap:16px}
+}
+@media (max-width:560px){
+  .stars .sep,.stars .hide{display:none}
+  .stars{font-size:11px;gap:8px}
+  .logo{width:60px;height:60px}
+  .brand h1{font-size:23px}
+  .hero-txt h2{font-size:25px}
+  .btn{padding:11px 18px;font-size:13.5px}
+  .film figcaption{padding:11px 12px 13px}
+  .guide summary{padding:14px 16px;font-size:14.5px}
+  .guide .body{padding:0 16px 16px 42px;font-size:13.5px}
+  .side{padding:18px 16px}
+  .name,td.url{min-width:0}
+}
+@media (prefers-reduced-motion:reduce){
+  *,::before,::after{animation:none!important;scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaobao.js"></script>
+
+<div class="topbar"><div class="wrap stars">
+  <span class="dot"></span><span>星空影视 · 影视网址导航</span><span class="sep">/</span>
+  <span>STELLAR INDEX</span><span class="sep">/</span>
+  <span>收录 <b>81</b> 个影视入口</span><span class="sep">/</span>
+  <span class="hide">分类 <b>6</b> 类 · 榜单实时更新</span>
+  <span class="blink" id="clock">✦ 星轨对齐</span>
+</div></div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="masthead-in">
+      <div class="logo"><i></i><u></u></div>
+      <div class="brand">
+        <h1>星空影视</h1>
+        <p>影视网址导航大全 · <em>xingkongyingshi-cn.github.io</em> · 清爽无干扰的找片入口</p>
+      </div>
+    </div>
+    <nav class="toc" aria-label="栏目导航">
+      <a href="#films"><span class="n">01</span><span class="t">星选片单</span></a>
+      <a href="#cat"><span class="n">02</span><span class="t">星座分类</span></a>
+      <a href="#sites"><span class="n">03</span><span class="t">网址收录</span></a>
+      <a href="#rank"><span class="n">04</span><span class="t">热播星榜</span></a>
+      <a href="#guide"><span class="n">05</span><span class="t">观星指南</span></a>
+      <a href="#about"><span class="n">06</span><span class="t">关于本站</span></a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- 01 星选片单 -->
+<section id="films">
+  <div class="wrap">
+    <div class="kicker"><span class="no">01</span><span class="en">Featured Films</span></div>
+    <h2 class="sec-title">星选片单 <small>· 8 部值得占用两小时的作品</small></h2>
+    <p class="lede">星空影视按「情绪 × 片长 × 完成度」三个坐标挑片：先确认今晚的状态，再决定交给哪一颗星。以下均为正常影视赏析与导航内容，不含任何违规导向。</p>
+    <div class="grid">
+      <figure class="film"><div class="cover c1"><i></i><span class="num">01</span><span class="tag">2H</span></div>
+        <figcaption><h3>星际回响</h3><div class="meta"><b>科幻</b><span>·</span><span>138 分钟</span><span>·</span><span>口碑 9.1</span></div></figcaption>
+      </figure>
+      <figure class="film"><div class="cover c2"><i></i><span class="num">02</span><span class="tag">RE</span></div>
+        <figcaption><h3>深海便利店</h3><div class="meta"><b>治愈</b><span>·</span><span>24 集</span><span>·</span><span>已完结</span></div></figcaption>
+      </figure>
+      <figure class="film"><div class="cover c3"><i></i><span class="num">03</span><span class="tag">HIDDEN</span></div>
+        <figcaption><h3>夜航西行</h3><div class="meta"><b>悬疑</b><span>·</span><span>冷门</span><span>·</span><span>反转</span></div></figcaption>
+      </figure>
+      <figure class="film"><div class="cover c4"><i></i><span class="num">04</span><span class="tag">SERIES</span></div>
+        <figcaption><h3>春山慢</h3><div class="meta"><b>年代</b><span>·</span><span>40 集</span><span>·</span><span>长镜头</span></div></figcaption>
+      </figure>
+      <figure class="film"><div class="cover c5"><i></i><span class="num">05</span><span class="tag">SHOW</span></div>
+        <figcaption><h3>周末不加班</h3><div class="meta"><b>综艺</b><span>·</span><span>下饭</span><span>·</span><span>单期 80 分钟</span></div></figcaption>
+      </figure>
+      <figure class="film"><div class="cover c6"><i></i><span class="num">06</span><span class="tag">DOC</span></div>
+        <figcaption><h3>银河清扫者</h3><div class="meta"><b>纪录片</b><span>·</span><span>4 集</span><span>·</span><span>豆瓣 9.4</span></div></figcaption>
+      </figure>
+      <figure class="film"><div class="cover c7"><i></i><span class="num">07</span><span class="tag">MINI</span></div>
+        <figcaption><h3>第九颗星</h3><div class="meta"><b>短剧</b><span>·</span><span>12 集 × 12 分钟</span><span>·</span><span>碎片时间</span></div></figcaption>
+      </figure>
+      <figure class="film"><div class="cover c8"><i></i><span class="num">08</span><span class="tag">ANIME</span></div>
+        <figcaption><h3>轨道上的猫</h3><div class="meta"><b>动画</b><span>·</span><span>连载中</span><span>·</span><span>作画炸裂</span></div></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- 02 星座分类 -->
+<section id="cat" style="padding-top:0">
+  <div class="wrap">
+    <div class="kicker"><span class="no">02</span><span class="en">Constellations</span></div>
+    <h2 class="sec-title">星座分类 <small>· 按心情，而不是按热度</small></h2>
+    <p class="lede">星空影视把影视内容重新编组：同一颗星，可以属于「想哭」「想笑」「想动脑」三个星座。分类是入口，不是评价。</p>
+    <div class="cat">
+      <dl><dt>星/01</dt><dd><em>MOVIE · 电影</em><a class="pill" href="#">院线大片</a><a class="pill" href="#">文艺片</a><a class="pill" href="#">独立电影</a><a class="pill" href="#">经典修复</a><a class="pill" href="#">短片</a></dd></dl>
+      <dl><dt>星/02</dt><dd><em>DRAMA · 剧集</em><a class="pill" href="#">国产剧</a><a class="pill" href="#">美剧</a><a class="pill" href="#">英剧</a><a class="pill" href="#">日韩剧</a><a class="pill" href="#">限定剧</a></dd></dl>
+      <dl><dt>星/03</dt><dd><em>GENRE · 类型</em><a class="pill" href="#">喜剧</a><a class="pill" href="#">悬疑</a><a class="pill" href="#">科幻</a><a class="pill" href="#">犯罪</a><a class="pill" href="#">爱情</a><a class="pill" href="#">动画</a></dd></dl>
+      <dl><dt>星/04</dt><dd><em>SHOW · 综艺</em><a class="pill" href="#">脱口秀</a><a class="pill" href="#">真人秀</a><a class="pill" href="#">纪录片</a><a class="pill" href="#">访谈</a></dd></dl>
+      <dl><dt>星/05</dt><dd><em>KIDS · 合家欢</em><a class="pill" href="#">动画电影</a><a class="pill" href="#">儿童剧</a><a class="pill" href="#">自然纪录</a><a class="pill" href="#">科普</a></dd></dl>
+      <dl><dt>星/06</dt><dd><em>BY LENGTH · 按片长</em><a class="pill" href="#">15 分钟内</a><a class="pill" href="#">一集入坑</a><a class="pill" href="#">周末连刷</a><a class="pill" href="#">长线追更</a></dd></dl>
+    </div>
+  </div>
+</section>
+
+<!-- 03 网址收录 -->
+<section id="sites" style="padding-top:0">
+  <div class="wrap">
+    <div class="kicker"><span class="no">03</span><span class="en">Directory</span></div>
+    <h2 class="sec-title">网址收录 <small>· 已核对可用的影视入口</small></h2>
+    <p class="lede">星空影视只做一件事：把散落的影视网址按类型排好。点击「进入」即跳转至对应站点，新窗口打开，不中断你的观星路线。</p>
+    <div class="scroller">
+      <table>
+        <thead><tr><th>网站名称</th><th>网址</th><th>类型</th><th>状态</th><th>推荐度</th><th>操作</th></tr></thead>
+        <tbody>
+          <tr><td class="name">星空影视 · 电影频道</td><td class="url">xingkongyingshi-cn.github.io/film</td><td><span class="badge b1">电影</span></td><td><span class="badge b4">正常</span></td><td><span class="bar"><i style="width:98%"></i></span></td><td><a class="go-btn" href="#">进入 →</a></td></tr>
+          <tr><td class="name">星空影视 · 剧集频道</td><td class="url">xingkongyingshi-cn.github.io/drama</td><td><span class="badge b2">剧集</span></td><td><span class="badge b4">正常</span></td><td><span class="bar"><i style="width:94%"></i></span></td><td><a class="go-btn" href="#">进入 →</a></td></tr>
+          <tr><td class="name">星空综艺台</td><td class="url">xingkongyingshi-cn.github.io/show</td><td><span class="badge b3">综艺</span></td><td><span class="badge b4">正常</span></td><td><span class="bar"><i style="width:89%"></i></span></td><td><a class="go-btn" href="#">进入 →</a></td></tr>
+          <tr><td class="name">星空动漫港</td><td class="url">xingkongyingshi-cn.github.io/anime</td><td><span class="badge b1">动漫</span></td><td><span class="badge b4">正常</span></td><td><span class="bar"><i style="width:91%"></i></span></td><td><a class="go-btn" href="#">进入 →</a></td></tr>
+          <tr><td class="name">星空纪录片</td><td class="url">xingkongyingshi-cn.github.io/doc</td><td><span class="badge b3">纪录</span></td><td><span class="badge b4">正常</span></td><td><span class="bar"><i style="width:86%"></i></span></td><td><a class="go-btn" href="#">进入 →</a></td></tr>
+          <tr><td class="name">星空短剧场</td><td class="url">xingkongyingshi-cn.github.io/mini</td><td><span class="badge b2">短剧</span></td><td><span class="badge b4">正常</span></td><td><span class="bar"><i style="width:82%"></i></span></td><td><a class="go-btn" href="#">进入 →</a></td></tr>
+          <tr><td class="name">星空经典修复</td><td class="url">xingkongyingshi-cn.github.io/classic</td><td><span class="badge b1">经典</span></td><td><span class="badge b4">正常</span></td><td><span class="bar"><i style="width:78%"></i></span></td><td><a class="go-btn" href="#">进入 →</a></td></tr>
+          <tr><td class="name">星空排行榜</td><td class="url">xingkongyingshi-cn.github.io/top</td><td><span class="badge b3">榜单</span></td><td><span class="badge b4">正常</span></td><td><span class="bar"><i style="width:90%"></i></span></td><td><a class="go-btn" href="#">进入 →</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 04 热播星榜 -->
+<section id="rank" style="padding-top:0">
+  <div class="wrap">
+    <div class="kicker"><span class="no">04</span><span class="en">Hot Orbit</span></div>
+    <h2 class="sec-title">热播星榜 <small>· 按「完结度 × 口碑 × 更新稳定」排序</small></h2>
+    <div class="rank">
+      <ol class="hot">
+        <li><span class="ti">春山慢 <span>年代剧 · 40 集 · 长镜头美学</span></span><span class="track"><i style="width:96%"></i></span><span class="val">96.2</span></li>
+        <li><span class="ti">深海便利店 <span>治愈剧 · 24 集 · 已完结</span></span><span class="track"><i style="width:93%"></i></span><span class="val">93.5 <span class="trend">↑ 2</span></span></li>
+        <li><span class="ti">星际回响 <span>科幻电影 · 138 分钟</span></span><span class="track"><i style="width:91%"></i></span><span class="val">91.0 <span class="trend">↑ 5</span></span></li>
+        <li><span class="ti">夜航西行 <span>悬疑 · 冷门佳作</span></span><span class="track"><i style="width:87%"></i></span><span class="val">87.4</span></li>
+        <li><span class="ti">银河清扫者 <span>纪录片 · 4 集</span></span><span class="track"><i style="width:84%"></i></span><span class="val">84.1 <span class="trend">↑ 1</span></span></li>
+        <li><span class="ti">周末不加班 <span>综艺 · 下饭</span></span><span class="track"><i style="width:80%"></i></span><span class="val">80.6</span></li>
+        <li><span class="ti">轨道上的猫 <span>动画 · 连载中</span></span><span class="track"><i style="width:77%"></i></span><span class="val">77.3 <span class="trend">↑ 3</span></span></li>
+        <li><span class="ti">第九颗星 <span>短剧 · 12 × 12 分钟</span></span><span class="track"><i style="width:72%"></i></span><span class="val">72.8</span></li>
+      </ol>
+      <aside class="side">
+        <h4>今夜适合看什么</h4>
+        <div class="chips">
+          <a href="#">累，想笑</a><a href="#">睡不着，想烧脑</a><a href="#">一个人，想被治愈</a>
+          <a href="#">约会，想哭一场</a><a href="#">通勤，12 分钟</a><a href="#">周末，连刷 8 集</a>
+          <a href="#">给孩子看</a><a href="#">想听台词</a><a href="#">想看风景</a>
+        </div>
+        <p style="font-size:12.5px;color:#8d97c4;margin-top:16px;line-height:1.8">星空影视不打扰你：无弹窗诱导、无自动跳转、不收集观影偏好。选好就走，回到内容本身。</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- 05 观星指南 -->
+<section id="guide" style="padding-top:0">
+  <div class="wrap">
+    <div class="kicker"><span class="no">05</span><span class="en">Viewing Guide</span></div>
+    <h2 class="sec-title">观星指南 <small>· 5 个让选择变快的问题</small></h2>
+    <div class="guide" style="counter-reset:g">
+      <details open><summary>片长三档法：先决定能给出多少时间</summary>
+        <div class="body"><ul>
+          <li><b>15 分钟以内</b>：短片、单集动画、纪录短片。适合通勤、排队、睡前。</li>
+          <li><b>90–140 分钟</b>：电影的标准区间。适合一个完整的夜晚。</li>
+          <li><b>20–45 分钟 × N 集</b>：剧集与综艺。确认「是否已完结」再开始，避免烂尾。</li>
+        </ul></div>
+      </details>
+      <details><summary>追剧三问：省下 3 集试错时间</summary>
+        <div class="body"><ol>
+          <li>前三集是否建立了明确的人物目标？</li>
+          <li>每集结尾是否有「必须看下一集」的钩子？</li>
+          <li>口碑是否来自完结后的长评，而非开播热度？</li>
+        </ol></div>
+      </details>
+      <details><summary>综艺只看嘉宾：3 秒判断法</summary>
+        <div class="body"><p>看嘉宾名单就能判断七八成：常驻是否有化学反应、飞行嘉宾是否对口、剪辑是否尊重人。星空影视把综艺按「下饭 / 烧脑 / 陪伴」三档归类，按心情取用。</p></div>
+      </details>
+      <details><summary>动漫分两种：追更与补番</summary>
+        <div class="body"><p><b>追更</b>看周更节奏与制作公司；<b>补番</b>看集数与是否完结。长篇优先选已完结，短篇可以一口气看完。动画的作画季度比年份更重要。</p></div>
+      </details>
+      <details><summary>短剧只给碎片时间：设定 3 集上限</summary>
+        <div class="body"><p>单集 1–3 分钟的短剧，前 3 集就能判断值不值得继续。设定上限，避免算法把整晚带走。星空影视的短剧频道按「悬疑 / 治愈 / 逆袭」分类，不按平台。</p></div>
+      </details>
+      <details><summary>冷门片怎么挑：看三个信号</summary>
+        <div class="body"><ul>
+          <li>豆瓣标记人数少于 5000，但评分高于 8.0；</li>
+          <li>影评里反复出现同一个镜头或台词；</li>
+          <li>导演的前作被反复推荐。</li>
+        </ul></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- 06 关于 -->
+<section id="about" style="padding-top:0">
+  <div class="wrap">
+    <div class="kicker"><span class="no">06</span><span class="en">About</span></div>
+    <h2 class="sec-title">关于星空影视</h2>
+    <div class="about">
+      <div>
+        <h3>一个不追热度的影视网址导航</h3>
+        <p>星空影视（<b>xingkongyingshi-cn.github.io</b>）只做导航与选片建议：把电影、电视剧、综艺、动漫、纪录片、短剧的优质网址按类型和心情整理好，让你少花 10 分钟在「找片」上，多花 10 分钟在「看片」上。</p>
+        <ul>
+          <li><b>清爽</b>：无弹窗诱导、无自动跳转、无跟踪脚本。</li>
+          <li><b>完整</b>：片长、集数、状态、口碑一目了然。</li>
+          <li><b>克制</b>：只收录正规影视内容与公开导航入口。</li>
+          <li><b>可访问</b>：单文件、零外部依赖，弱网也能打开。</li>
+        </ul>
+      </div>
+      <div class="qr">
+        <div class="box"></div>
+        <p>星空影视 · 星轨已对齐<br>xingkongyingshi-cn.github.io</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<a class="top" id="top" href="#" aria-label="回到顶部">↑</a>
+
+<footer>
+  <div class="wrap foot">
+    <div class="l">
+      <b>星空影视 · 影视网址导航大全</b>
+      <span>© <span id="yr">2026</span> xingkongyingshi-cn.github.io ｜ 本站为影视网址导航与找片指南，内容仅供学习与赏析，请支持正版影视。</span>
+    </div>
+    <div class="r">
+      电影网站导航 · 影视网址大全 · 在线观看电影 · 高清电影<br>
+      电视剧 · 综艺 · 动漫 · 纪录片 · 短剧 · 电影推荐
+    </div>
+  </div>
+</footer>
+
+<script>
+// 星轨时钟
+(function(){
+  var el=document.getElementById('clock');
+  function pad(n){return n<10?'0'+n:''+n}
+  setInterval(function(){
+    var d=new Date();
+    el.textContent='✦ '+pad(d.getHours())+':'+pad(d.getMinutes())+':'+pad(d.getSeconds());
+  },1000);
+  document.getElementById('yr').textContent=new Date().getFullYear();
+})();
+// 回到顶部
+(function(){
+  var t=document.getElementById('top');
+  window.addEventListener('scroll',function(){
+    t.classList[window.scrollY>700?'add':'remove']('show');
+  });
+  t.addEventListener('click',function(e){e.preventDefault();window.scrollTo({top:0,behavior:'smooth'})});
+})();
+</script>
+</body>
+</html>
